@@ -11,3 +11,5 @@ build.sh
 public/static.tar.gz
 googled4a104f072a2696f.html
 public/html/static.tar.gz
+node_modules
+bower_components
