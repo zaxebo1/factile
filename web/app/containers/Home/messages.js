@@ -6,8 +6,12 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  header: {
-    id: 'app.containers.Home.header',
-    defaultMessage: 'This is Home container !',
+  title: {
+    id: 'app.containers.Home.title',
+    defaultMessage: 'Hello World',
+  },
+  welcome: {
+    id: 'app.containers.Home.welcome',
+    defaultMessage: 'Welcome to Factile, your free online fact finding survey tool.',
   },
 });

@@ -1,0 +1,11 @@
+api:
+  host: localhost
+  port: 9000
+  cors: true
+db:
+  url: mongodb://localhost:27017/factile
+token:
+  secret: 6uvorz6VTnZL2TTc3Ze5khrOwc9uCMVh9ggdFDjwKO6hZOX
+email:
+  username: user
+  password: pass

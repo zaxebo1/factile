@@ -14,6 +14,8 @@ import makeSelectHome from './selectors';
 import messages from './messages';
 import BackgroundImage from './background.jpg';
 
+import Login from '../Login';
+
 const Background = styled.img`
   width: 100%;
 `;
@@ -32,7 +34,7 @@ const Welcome = styled.div`
   color: #FFF;
 `;
 
-const Login = styled.div`
+const LoginBox = styled.div`
   width: 400px;
   max-width: 95%;
   height: 40%;
@@ -70,13 +72,13 @@ export class Home extends React.PureComponent { // eslint-disable-line react/pre
       <div>
         <Banner>
           <Welcome>
-            <h1>Hello, world!</h1>
-            <p>Welcome to Factile, your free online fact finding survey tool.</p>
+            <h1><FormattedMessage {...messages.title} /></h1>
+            <p><FormattedMessage {...messages.welcome} /></p>
           </Welcome>
 
-          <Login>
-          Login
-          </Login>
+          <LoginBox>
+            <Login />
+          </LoginBox>
           <Background src={BackgroundImage} />
         </Banner>
         <FeatureSection>
