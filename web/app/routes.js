@@ -38,6 +38,106 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
+      path: '/dashboard',
+      name: 'mySurveys',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/MySurveys/reducer'),
+          import('containers/MySurveys/sagas'),
+          import('containers/MySurveys'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('mySurveys', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/surveys/new',
+      name: 'surveyInformation',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/SurveyInformation/reducer'),
+          import('containers/SurveyInformation/sagas'),
+          import('containers/SurveyInformation'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('surveyInformation', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/surveys/questions',
+      name: 'surveyQuestions',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/SurveyQuestions/reducer'),
+          import('containers/SurveyQuestions/sagas'),
+          import('containers/SurveyQuestions'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('surveyQuestions', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/surveys/preview',
+      name: 'preview',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/Preview/reducer'),
+          import('containers/Preview/sagas'),
+          import('containers/Preview'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('preview', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/surveys/invite',
+      name: 'invitations',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/Invitations/reducer'),
+          import('containers/Invitations/sagas'),
+          import('containers/Invitations'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('invitations', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

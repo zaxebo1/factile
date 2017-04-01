@@ -10,3 +10,5 @@
  */
 
 export const DEFAULT_LOCALE = 'en';
+export const AUTH_SUCCESS = 'app/App/AUTH_SUCCESS';
+export const AUTH_ERROR = 'app/App/AUTH_ERROR';

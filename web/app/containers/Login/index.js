@@ -13,26 +13,62 @@ import makeSelectLogin from './selectors';
 import messages from './messages';
 
 const Form = styled.div`
-  width: 400px;
-  max-width: 95%;
-  height: 40%;
-  position: absolute;
-  top: 100px;
-  right: 2%;
-  z-index: 101;
-  background-color: #FFF;
-  opacity: 0.4;
-  color: #000;
-  padding: 2%;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+
+  input {
+    height: 2em;
+    width: 100%;
+    margin: 1em 0;
+    background-color: #333;
+    color: #FFF;
+    padding: 5px;
+  }
+
+  button {
+    background-color: #0074cc;
+    color: #FFF;
+    margin: 1em 0;
+    padding: 5px;
+    width: 100%;
+  }
 `;
 
 export class Login extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div>
-        <FormattedMessage {...messages.header} />
-      </div>
+      <Form>
+        <div id="signin">
+          <h2>Login</h2>
+          <form>
+            <div>
+              <input type="email" name="username" placeholder="Email address" autoComplete={false} />
+            </div>
+            <div>
+              <input type="password" name="password" placeholder="Password" />
+            </div>
+            <div>
+              <button>Sign in</button>
+            </div>
+          </form>
+        </div>
+        <h2>- OR -</h2>
+        <div id="register">
+          <h2>Register</h2>
+          <form>
+            <div>
+              <input type="email" name="username" placeholder="Email address" autoComplete={false} />
+            </div>
+            <div>
+              <input type="password" name="password" placeholder="Password" />
+            </div>
+            <div>
+              <input type="password" name="password2" placeholder="Confirm Password" />
+            </div>
+            <div>
+              <button>Sign up</button>
+            </div>
+          </form>
+        </div>
+      </Form>
     );
   }
 }

@@ -9,6 +9,7 @@ import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
 
 import homeSaga from './containers/Home/sagas';
+import mySurveysSaga from './containers/MySurveys/sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -42,6 +43,7 @@ export default function configureStore(initialState = {}, history) {
 
   // Setup custom sagas
   homeSaga.map(saga => sagaMiddleware.run(saga));
+  mySurveysSaga.map(saga => sagaMiddleware.run(saga));
 
   // Extensions
   store.runSaga = sagaMiddleware.run;

@@ -2,11 +2,17 @@
 
 const DB = require('./db');
 
-const find = (id) => {
+const findById = (id) => {
 
   return DB('users').where({ $id: id });
 };
 
+const all = () => {
+
+  return DB('users').all();
+};
+
 module.exports = {
-  find
+  all,
+  findById
 };
